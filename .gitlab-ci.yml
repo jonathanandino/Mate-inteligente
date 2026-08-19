@@ -3,15 +3,19 @@ image: node:22
 stages:
   - deploy
 
-create-pages:
+deploy-pages:
   stage: deploy
-
   script:
     - npm ci
     - npm run build
+    - rm -rf public
+    - mv dist public
 
-  pages:
-    publish: dist
+  artifacts:
+    paths:
+      - public
+
+  pages: true
 
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_COMMIT_BRANCH == "main"'
