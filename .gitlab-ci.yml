@@ -1,0 +1,8 @@
+mate-inteligente-app/
+│
+├── public/
+├── src/
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── .gitlab-ci.yml
