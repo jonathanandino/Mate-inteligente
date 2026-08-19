@@ -1,13 +1,17 @@
 image: node:22
 
-pages:
+stages:
+  - deploy
+
+create-pages:
+  stage: deploy
+
   script:
     - npm ci
     - npm run build
+
   pages:
     publish: dist
-  artifacts:
-    paths:
-      - dist
+
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
