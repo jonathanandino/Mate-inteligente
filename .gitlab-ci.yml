@@ -1,8 +1,13 @@
-mate-inteligente-app/
-│
-├── public/
-├── src/
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-└── .gitlab-ci.yml
+image: node:22
+
+pages:
+  script:
+    - npm ci
+    - npm run build
+  pages:
+    publish: dist
+  artifacts:
+    paths:
+      - dist
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
