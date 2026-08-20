@@ -1,34 +1,58 @@
-# React + TypeScript + Vite
+# Mate Inteligente
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Mate Inteligente es una landing page interactiva creada con React, TypeScript y Vite para presentar un producto ficticio: una bombilla inteligente pensada para acompanar la experiencia de tomar mate.
 
-Currently, two official plugins are available:
+El proyecto no representa un producto real ni comercial. Es una propuesta conceptual que imagina como podria integrarse tecnologia en un habito tradicional, combinando sensores, visualizacion de datos y diseno de producto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Concepto del producto
 
-## React Compiler
+La idea principal es una bombilla con funciones inteligentes capaces de mostrar informacion util durante el consumo del mate:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Medicion de temperatura del agua en tiempo real.
+- Estimacion del estado de la infusion.
+- Alertas visuales desde una pantalla compacta.
+- Registro conceptual de cebadas o ciclos de uso.
+- Conectividad simulada para representar un sistema inteligente.
 
-Note: This will impact Vite dev & build performances.
+El objetivo del sitio es explicar el problema, presentar la solucion imaginada y mostrar sus componentes principales mediante una interfaz visual e interactiva.
 
-## Expanding the Oxlint configuration
+## Secciones del sitio
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Hero:** introduccion del concepto y propuesta de valor.
+- **Problema:** situaciones comunes al tomar mate, como temperatura incierta o yerba lavada.
+- **Producto interactivo:** explorador visual de la bombilla con puntos seleccionables.
+- **Funciones:** resumen de capacidades del producto ficticio.
+- **Tecnologia:** descripcion conceptual de sensores, pantalla y microcontrolador.
+- **Beneficios:** ventajas imaginadas para el usuario.
+- **CTA final:** cierre narrativo del proyecto.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Tecnologias usadas
+
+- React
+- TypeScript
+- Vite
+- CSS
+
+## Scripts disponibles
+
+```bash
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Inicia el servidor de desarrollo.
+
+```bash
+npm run build
+```
+
+Genera la version de produccion.
+
+```bash
+npm run lint
+```
+
+Ejecuta el linter configurado para el proyecto.
+
+## Nota
+
+Este proyecto fue desarrollado como una pieza conceptual. Las funciones descritas en el sitio son simuladas y se usan solo para comunicar una idea de diseno e innovacion aplicada al mate.

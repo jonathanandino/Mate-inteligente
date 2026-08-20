@@ -586,6 +586,7 @@ a {
 /* PROBLEMA */
 
 .problem {
+
   background: var(--background);
 }
 
@@ -626,12 +627,12 @@ a {
 
   color: #b4beb5;
 
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .problem-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 
   background: var(--green-light);
 
@@ -887,8 +888,8 @@ a {
 }
 
 .feature-top > span {
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
 
   background: rgba(255,255,255,.08);
 
@@ -897,12 +898,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 45px;
 }
 
 .feature-top strong {
   color: #95c7a2;
 
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .feature-card h3 {
@@ -975,7 +977,7 @@ a {
 .tech-item > span {
   color: #9ba59c;
 
-  font-size: 11px;
+  font-size: 18px;
 }
 
 .tech-item strong {
@@ -1097,7 +1099,7 @@ a {
 }
 
 .benefits-grid strong {
-  font-size: 11px;
+  font-size: 15px;
 
   color: #89998d;
 }
@@ -1121,7 +1123,12 @@ a {
 /* CTA */
 
 .cta {
-  background: var(--green-dark);
+  background:
+          linear-gradient(
+                  rgba(7, 20, 12, .35),
+                  rgba(7, 20, 12, .78)
+          ),
+          url("./assets/product-dark-premium.png") center / cover no-repeat;
 
   padding: 130px 20px;
 
@@ -1287,4 +1294,1566 @@ footer {
     font-size: 42px;
   }
 
+}
+
+/* ========================================
+   PRODUCT EXPLORER
+======================================== */
+
+.interactive-product {
+  position: relative;
+  overflow: hidden;
+
+  background:
+          radial-gradient(
+                  circle at 20% 40%,
+                  rgba(70, 135, 92, .12),
+                  transparent 35%
+          ),
+          radial-gradient(
+                  circle at 85% 70%,
+                  rgba(53, 124, 77, .08),
+                  transparent 30%
+          ),
+          #07130d;
+
+  color: white;
+}
+
+
+/* CABECERA */
+
+.interactive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 60px;
+
+  margin-bottom: 60px;
+}
+
+.interactive-header > div {
+  max-width: 750px;
+}
+
+.interactive-header .section-tag {
+  color: #7fe29b;
+}
+
+.interactive-header h2 {
+  color: white;
+}
+
+.interactive-header h2 span {
+  color: #78c990;
+}
+
+.interactive-header > p {
+  max-width: 390px;
+
+  color: #899f90;
+
+  line-height: 1.7;
+}
+
+
+/* EXPLORADOR */
+
+.product-explorer {
+  display: grid;
+
+  grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(320px, .55fr);
+
+  gap: 24px;
+
+  min-height: 720px;
+}
+
+
+/* ESCENARIO */
+
+.product-stage {
+  min-height: 720px;
+
+  position: relative;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  border:
+          1px solid
+          rgba(129, 218, 155, .15);
+
+  background:
+          linear-gradient(
+                  145deg,
+                  rgba(20, 49, 33, .65),
+                  rgba(5, 18, 11, .92)
+          );
+
+  box-shadow:
+          inset 0 0 60px
+          rgba(70, 170, 100, .04);
+}
+
+
+/* GRID FUTURISTA */
+
+.stage-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: .13;
+
+  background-image:
+          linear-gradient(
+                  rgba(91, 187, 118, .2) 1px,
+                  transparent 1px
+          ),
+          linear-gradient(
+                  90deg,
+                  rgba(91, 187, 118, .2) 1px,
+                  transparent 1px
+          );
+
+  background-size: 45px 45px;
+
+  mask-image:
+          linear-gradient(
+                  to bottom,
+                  black,
+                  transparent 95%
+          );
+}
+
+
+/* RESPLANDOR */
+
+.stage-glow {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+          translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+          rgba(77, 192, 108, .1);
+
+  filter: blur(60px);
+}
+
+
+/* HUD */
+
+.hud-top {
+  position: absolute;
+
+  top: 28px;
+  left: 30px;
+  right: 30px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #698674;
+}
+
+.live-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.live-status i {
+  width: 6px;
+  height: 6px;
+
+  background: #65eb8b;
+
+  border-radius: 50%;
+
+  box-shadow:
+          0 0 14px #65eb8b;
+
+  animation:
+          statusPulse 1.5s infinite;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* ========================================
+   BOMBILLA FUTURISTA
+======================================== */
+
+.smart-bombilla {
+  position: absolute;
+
+  left: 50%;
+  top: 52%;
+
+  transform:
+          translate(-50%, -50%)
+          rotate(6deg);
+
+  width: 105px;
+
+  filter:
+          drop-shadow(
+                  0 35px 40px
+                  rgba(0, 0, 0, .55)
+          );
+
+  transition:
+          transform .4s ease;
+}
+
+.product-stage:hover
+.smart-bombilla {
+
+  transform:
+          translate(-50%, -52%)
+          rotate(4deg)
+          scale(1.02);
+}
+
+
+/* CABEZA */
+
+.smart-head {
+  height: 225px;
+
+  position: relative;
+
+  padding-top: 20px;
+
+  border-radius:
+          45px 45px 19px 19px;
+
+  background:
+          linear-gradient(
+                  90deg,
+                  #6f7471,
+                  #dadeda 25%,
+                  #ffffff 50%,
+                  #a4aaa6 72%,
+                  #555b57
+          );
+
+  box-shadow:
+          inset 4px 0 5px
+          rgba(255,255,255,.5),
+          inset -5px 0 8px
+          rgba(0,0,0,.25);
+}
+
+
+.smart-logo {
+  width: 30px;
+  height: 30px;
+
+  margin: auto;
+
+  border:
+          1px solid
+          rgba(0,0,0,.35);
+
+  color: #234b30;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+/* DISPLAY */
+
+.smart-display {
+  width: 75px;
+  height: 125px;
+
+  margin:
+          13px auto 0;
+
+  padding:
+          17px 10px;
+
+  border-radius: 22px;
+
+  color: white;
+
+  text-align: center;
+
+  background:
+          linear-gradient(
+                  155deg,
+                  #111c16,
+                  #031008
+          );
+
+  box-shadow:
+          inset 0 0 18px
+          rgba(97, 255, 139, .08),
+          0 4px 12px
+          rgba(0,0,0,.4);
+
+  border:
+          1px solid
+          rgba(255,255,255,.07);
+}
+
+
+.smart-display small {
+  display: block;
+
+  margin-bottom: 17px;
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+
+  color: #759080;
+}
+
+
+.smart-display strong {
+  font-family:
+          "Manrope",
+          sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+
+.smart-display em {
+  font-style: normal;
+
+  font-size: 10px;
+
+  color: #8a9c90;
+}
+
+
+.display-progress {
+  width: 40px;
+  height: 3px;
+
+  margin:
+          18px auto 0;
+
+  background:
+          #172d1e;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+
+.display-progress span {
+  display: block;
+
+  width: 78%;
+  height: 100%;
+
+  background:
+          #65f18a;
+
+  box-shadow:
+          0 0 10px #65f18a;
+
+  animation:
+          displayLoad 2.2s infinite alternate;
+}
+
+
+@keyframes displayLoad {
+
+  from {
+    width: 55%;
+  }
+
+  to {
+    width: 82%;
+  }
+}
+
+
+/* CUERPO */
+
+.smart-body {
+  width: 58px;
+  height: 360px;
+
+  margin: auto;
+
+  position: relative;
+
+  background:
+          linear-gradient(
+                  90deg,
+                  #565b58,
+                  #bfc3c0,
+                  #f5f5f3 50%,
+                  #969b97,
+                  #494e4a
+          );
+}
+
+
+/* SENSOR RINGS */
+
+.sensor-ring,
+.infusion-ring {
+
+  position: absolute;
+
+  left: 50%;
+
+  transform:
+          translateX(-50%);
+
+  width: 68px;
+  height: 8px;
+
+  border-radius: 5px;
+
+  background:
+          #18281e;
+
+  border:
+          1px solid
+          #4a7657;
+
+  box-shadow:
+          0 0 8px
+          rgba(101, 241, 138, .3);
+}
+
+
+.sensor-ring {
+  top: 110px;
+}
+
+
+.infusion-ring {
+  top: 245px;
+}
+
+
+/* FILTRO */
+
+.smart-filter {
+  width: 75px;
+  height: 100px;
+
+  margin: auto;
+
+  padding: 20px 12px;
+
+  border-radius:
+          12px 12px
+          35px 35px;
+
+  display: grid;
+
+  grid-template-columns:
+        repeat(3, 7px);
+
+  justify-content: center;
+
+  gap: 7px;
+
+  background:
+          linear-gradient(
+                  90deg,
+                  #555b57,
+                  #ddd,
+                  #858a86
+          );
+}
+
+
+.smart-filter span {
+  width: 7px;
+  height: 7px;
+
+  background: #343936;
+
+  border-radius: 50%;
+
+  box-shadow:
+          inset 0 1px 2px
+          black;
+}
+
+
+/* ========================================
+   HOTSPOTS
+======================================== */
+
+.hotspot {
+
+  position: absolute;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border:
+          1px solid
+          rgba(102, 233, 137, .35);
+
+  background:
+          rgba(6, 24, 14, .75);
+
+  color:
+          #75d98e;
+
+  cursor: pointer;
+
+  backdrop-filter:
+          blur(10px);
+
+  z-index: 10;
+
+  transition:
+          all .25s ease;
+}
+
+
+.hotspot::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  border:
+          1px solid
+          rgba(101, 241, 138, .12);
+
+  border-radius: 50%;
+
+  animation:
+          hotspotPulse 2.5s infinite;
+}
+
+
+.hotspot span {
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.hotspot:hover,
+.hotspot.active {
+
+  color:
+          #07140c;
+
+  background:
+          #68ed8d;
+
+  border-color:
+          #68ed8d;
+
+  box-shadow:
+          0 0 25px
+          rgba(104, 237, 141, .6);
+
+  transform:
+          scale(1.12);
+}
+
+
+@keyframes hotspotPulse {
+
+  0% {
+    transform: scale(.8);
+    opacity: .2;
+  }
+
+  70% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.hotspot-display {
+  left: 57%;
+  top: 22%;
+}
+
+
+.hotspot-thermal {
+  left: 43%;
+  top: 47%;
+}
+
+
+.hotspot-infusion {
+  left: 57%;
+  top: 64%;
+}
+
+
+.hotspot-filter {
+  left: 43%;
+  top: 84%;
+}
+
+
+/* ========================================
+   DATOS FLOTANTES
+======================================== */
+
+.sensor-data {
+
+  position: absolute;
+
+  padding:
+          13px 17px;
+
+  border-radius:
+          12px;
+
+  background:
+          rgba(9, 29, 17, .72);
+
+  border:
+          1px solid
+          rgba(95, 190, 121, .13);
+
+  backdrop-filter:
+          blur(12px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-shadow:
+          0 12px 30px
+          rgba(0,0,0,.25);
+}
+
+
+.sensor-data small {
+
+  color:
+          #5d7866;
+
+  font-size: 7px;
+
+  letter-spacing:
+          1.4px;
+}
+
+
+.sensor-data strong {
+
+  margin-top: 5px;
+
+  color:
+          #dbe7de;
+
+  font-size: 17px;
+}
+
+
+.data-temperature {
+
+  top: 20%;
+
+  left: 8%;
+}
+
+
+.data-temperature span {
+
+  color:
+          #6adc86;
+
+  font-size: 8px;
+}
+
+
+.data-infusion {
+
+  right: 7%;
+
+  bottom: 19%;
+
+  width: 120px;
+}
+
+
+.mini-progress {
+
+  margin-top:
+          8px;
+
+  height: 3px;
+
+  background:
+          #193322;
+
+  border-radius:
+          10px;
+}
+
+
+.mini-progress span {
+
+  display: block;
+
+  width: 78%;
+  height: 100%;
+
+  background:
+          #5ce67f;
+
+  border-radius:
+          inherit;
+}
+
+
+.data-bluetooth {
+
+  left: 8%;
+
+  bottom: 10%;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.bluetooth-icon {
+
+  font-size: 20px;
+
+  color:
+          #69dc89;
+}
+
+
+.data-bluetooth strong {
+
+  font-size: 9px;
+
+  color:
+          #70d88b;
+}
+
+
+/* ========================================
+   PANEL
+======================================== */
+
+.interactive-panel {
+
+  border-radius:
+          30px;
+
+  padding:
+          42px;
+
+  position:
+          relative;
+
+  overflow: hidden;
+
+  background:
+          linear-gradient(
+                  165deg,
+                  rgba(22, 48, 32, .8),
+                  rgba(7, 23, 13, .95)
+          );
+
+  border:
+          1px solid
+          rgba(129, 218, 155, .13);
+}
+
+
+.panel-number {
+
+  position:
+          absolute;
+
+  right:
+          30px;
+
+  top:
+          20px;
+
+  color:
+          rgba(108, 200, 132, .07);
+
+  font-family:
+          "Manrope";
+
+  font-size:
+          120px;
+
+  font-weight:
+          800;
+}
+
+
+.panel-tag {
+
+  position:
+          relative;
+
+  z-index:
+          2;
+
+  color:
+          #6ee68d;
+
+  font-size:
+          9px;
+
+  letter-spacing:
+          2px;
+}
+
+
+.interactive-panel h3 {
+
+  position:
+          relative;
+
+  z-index:
+          2;
+
+  margin:
+          15px 0 18px;
+
+  font-size:
+          37px;
+
+  letter-spacing:
+          -1.5px;
+
+  line-height:
+          1.05;
+}
+
+
+.interactive-panel > p {
+
+  position:
+          relative;
+
+  z-index:
+          2;
+
+  color:
+          #8ca091;
+
+  line-height:
+          1.7;
+
+  font-size:
+          14px;
+}
+
+
+/* LECTURA */
+
+.panel-reading {
+
+  margin-top:
+          35px;
+
+  padding:
+          20px;
+
+  border:
+          1px solid
+          rgba(120, 211, 145, .13);
+
+  border-radius:
+          17px;
+
+  display:
+          flex;
+
+  justify-content:
+          space-between;
+
+  align-items:
+          center;
+
+  background:
+          rgba(255,255,255,.02);
+}
+
+
+.panel-reading div {
+
+  display:
+          flex;
+
+  flex-direction:
+          column;
+}
+
+
+.panel-reading small {
+
+  color:
+          #577060;
+
+  letter-spacing:
+          1.5px;
+
+  font-size:
+          7px;
+}
+
+
+.panel-reading strong {
+
+  margin-top:
+          5px;
+
+  font-size:
+          26px;
+
+  color:
+          #dce7df;
+}
+
+
+.panel-reading > span {
+
+  display:
+          flex;
+
+  align-items:
+          center;
+
+  gap:
+          7px;
+
+  color:
+          #6bca82;
+
+  font-size:
+          9px;
+}
+
+
+.panel-reading i {
+
+  width:
+          6px;
+
+  height:
+          6px;
+
+  background:
+          #65e786;
+
+  border-radius:
+          50%;
+
+  box-shadow:
+          0 0 10px
+          #65e786;
+}
+
+
+/* CONTROL DE PANTALLA */
+
+.screen-controller {
+
+  margin-top:
+          32px;
+}
+
+
+.screen-controller > small {
+
+  display:
+          block;
+
+  margin-bottom:
+          11px;
+
+  color:
+          #617867;
+
+  font-size:
+          7px;
+
+  letter-spacing:
+          1.5px;
+}
+
+
+.screen-buttons {
+
+  display:
+          grid;
+
+  grid-template-columns:
+        repeat(3, 1fr);
+
+  gap:
+          7px;
+}
+
+
+.screen-buttons button {
+
+  padding:
+          10px 5px;
+
+  border:
+          1px solid
+          rgba(129, 218, 155, .12);
+
+  border-radius:
+          9px;
+
+  color:
+          #728577;
+
+  background:
+          rgba(255,255,255,.02);
+
+  cursor:
+          pointer;
+
+  font-size:
+          9px;
+
+  transition:
+          .2s;
+}
+
+
+.screen-buttons button:hover {
+
+  border-color:
+          #5dd77d;
+
+  color:
+          white;
+}
+
+
+.screen-buttons button.active {
+
+  color:
+          #07140c;
+
+  background:
+          #68df87;
+
+  border-color:
+          #68df87;
+}
+
+
+/* SELECTOR */
+
+.component-selector {
+
+  margin-top:
+          35px;
+
+  display:
+          flex;
+
+  flex-direction:
+          column;
+}
+
+
+.component-selector button {
+
+  height:
+          55px;
+
+  padding:
+          0 5px;
+
+  border:
+          none;
+
+  border-bottom:
+          1px solid
+          rgba(255,255,255,.07);
+
+  background:
+          transparent;
+
+  color:
+          #718277;
+
+  text-align:
+          left;
+
+  display:
+          grid;
+
+  grid-template-columns:
+        35px 1fr 20px;
+
+  align-items:
+          center;
+
+  cursor:
+          pointer;
+
+  transition:
+          .2s;
+}
+
+
+.component-selector button span {
+
+  color:
+          #526258;
+
+  font-size:
+          9px;
+}
+
+
+.component-selector button strong {
+
+  opacity:
+          0;
+
+  transform:
+          translateX(-5px);
+
+  transition:
+          .2s;
+}
+
+
+.component-selector button:hover,
+.component-selector button.active {
+
+  color:
+          white;
+
+  padding-left:
+          10px;
+}
+
+
+.component-selector button.active span {
+
+  color:
+          #68df87;
+}
+
+
+.component-selector button.active strong,
+.component-selector button:hover strong {
+
+  opacity:
+          1;
+
+  color:
+          #67df87;
+
+  transform:
+          translateX(0);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+  .interactive-header {
+
+    flex-direction:
+            column;
+
+    align-items:
+            flex-start;
+  }
+
+
+  .product-explorer {
+
+    grid-template-columns:
+            1fr;
+  }
+
+
+  .product-stage {
+
+    min-height:
+            650px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .product-stage {
+
+    min-height:
+            570px;
+  }
+
+
+  .smart-bombilla {
+
+    transform:
+            translate(-50%, -50%)
+            scale(.8);
+  }
+
+
+  .product-stage:hover
+  .smart-bombilla {
+
+    transform:
+            translate(-50%, -50%)
+            scale(.82);
+  }
+
+
+  .sensor-data {
+
+    transform:
+            scale(.8);
+  }
+
+
+  .data-temperature {
+
+    left:
+            1%;
+  }
+
+
+  .data-infusion {
+
+    right:
+            1%;
+  }
+
+
+  .interactive-panel {
+
+    padding:
+            30px 22px;
+  }
+
+
+  .interactive-panel h3 {
+
+    font-size:
+            31px;
+  }
+
+}
+
+/* NAVBAR GLASS */
+
+.navbar {
+  position: fixed;
+
+  background:
+          rgba(8, 22, 13, .68);
+
+  backdrop-filter:
+          blur(20px);
+
+  border-bottom:
+          1px solid
+          rgba(110, 210, 137, .1);
+}
+
+.nav-links a {
+  color:
+          rgba(255,255,255,.65);
+}
+
+.nav-links a:hover {
+  color:
+          #7bef9a;
+}
+
+.brand-name strong {
+  color:
+          white;
+}
+
+.brand-name p {
+  color:
+          #758b7b;
+}
+
+.brand-icon {
+  border-color:
+          #5fc67b;
+}
+
+
+/* HERO FUTURISTA */
+
+.hero {
+
+  background:
+          radial-gradient(
+                  circle at 75% 35%,
+                  rgba(66, 160, 91, .20),
+                  transparent 26%
+          ),
+          linear-gradient(
+                  135deg,
+                  #07140c,
+                  #0c2114 55%,
+                  #07140c
+          );
+
+  color:
+          white;
+}
+
+
+.hero::before {
+
+  content: "";
+
+  position:
+          absolute;
+
+  inset:
+          0;
+
+  opacity:
+          .10;
+
+  background-image:
+
+          linear-gradient(
+                  rgba(86, 197, 115, .2) 1px,
+                  transparent 1px
+          ),
+
+          linear-gradient(
+                  90deg,
+                  rgba(86, 197, 115, .2) 1px,
+                  transparent 1px
+          );
+
+  background-size:
+          60px 60px;
+
+  pointer-events:
+          none;
+}
+
+
+.hero-description {
+
+  color:
+          #91a498;
+}
+
+
+.hero-badge {
+
+  color:
+          #7ce298;
+}
+
+
+.hero-badge span {
+
+  background:
+          #70ec91;
+
+  box-shadow:
+          0 0 10px
+          #70ec91;
+}
+
+
+.hero h1 span {
+
+  background:
+          linear-gradient(
+                  90deg,
+                  #6ee78e,
+                  #aedbb8
+          );
+
+  background-clip:
+          text;
+
+  color:
+          transparent;
+}
+
+
+.button-primary {
+
+  background:
+          #69e589;
+
+  color:
+          #07140c;
+
+  box-shadow:
+          0 0 30px
+          rgba(105,229,137,.15);
+}
+
+
+.button-primary:hover {
+
+  box-shadow:
+          0 0 40px
+          rgba(105,229,137,.35);
+}
+
+
+.button-secondary {
+
+  color:
+          white;
+
+  border:
+          1px solid
+          rgba(255,255,255,.12);
+
+  background:
+          rgba(255,255,255,.04);
+
+  backdrop-filter:
+          blur(10px);
+}
+
+
+.hero-stats strong {
+
+  color:
+          #d8e7dc;
+}
+
+
+.hero-stats span {
+
+  color:
+          #708478;
+}
+
+
+/* CARDS */
+
+.problem-card {
+
+  overflow:
+          hidden;
+}
+
+
+.problem-card::after {
+
+  content: "";
+
+  position:
+          absolute;
+
+  width:
+          150px;
+
+  height:
+          150px;
+
+  right:
+          -80px;
+
+  top:
+          -80px;
+
+  border-radius:
+          50%;
+
+  background:
+          rgba(81, 167, 106, .08);
+
+  transition:
+          .4s;
+}
+
+
+.problem-card:hover::after {
+
+  transform:
+          scale(2.2);
+}
+
+.logo{
+  height: 45px;
+  width: 45px;
+}
+
+.logo-bombilla{
+  height:30px;
+  width:30px;
 }

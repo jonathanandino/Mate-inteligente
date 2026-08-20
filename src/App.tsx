@@ -1,6 +1,89 @@
+import { useState } from "react";
+import favicon from "./assets/MateIntNeg.svg";
+import logoVerde from "./assets/MateInt.svg"
 import "./App.css";
 
+type ProductPartKey =
+    | "display"
+    | "thermal"
+    | "infusion"
+    | "filter";
+
+type ScreenMode =
+    | "temperature"
+    | "infusion"
+    | "cebadas";
+
+const productParts = {
+  display: {
+    number: "01",
+    tag: "INTERFAZ",
+    title: "Pantalla inteligente",
+    text: "Una pequeña pantalla integrada permite consultar la información principal sin necesidad de utilizar el celular.",
+    value: "74°C",
+    status: "Temperatura ideal",
+  },
+
+  thermal: {
+    number: "02",
+    tag: "SENSOR",
+    title: "Sensor térmico",
+    text: "Mide continuamente la temperatura del agua y permite identificar cuándo el mate está demasiado caliente, frío o en su punto ideal.",
+    value: "74°C",
+    status: "Lectura en tiempo real",
+  },
+
+  infusion: {
+    number: "03",
+    tag: "ANÁLISIS",
+    title: "Sensor de infusión",
+    text: "Analiza diferentes parámetros del líquido para estimar el rendimiento restante de la yerba y detectar cuándo el mate comienza a lavarse.",
+    value: "78%",
+    status: "Infusión óptima",
+  },
+
+  filter: {
+    number: "04",
+    tag: "DISEÑO",
+    title: "Filtro inteligente",
+    text: "Mantiene el funcionamiento tradicional de una bombilla mientras integra los sensores necesarios para obtener información del mate.",
+    value: "ACTIVO",
+    status: "Monitoreo constante",
+  },
+};
+
+const productPartKeys = Object.keys(productParts) as ProductPartKey[];
+
 function App() {
+
+  const [activePart, setActivePart] = useState<ProductPartKey>("display");
+
+  const [screenMode, setScreenMode] = useState<ScreenMode>("temperature");
+
+  const activeProduct = productParts[activePart];
+
+  const screenData = {
+    temperature: {
+      label: "TEMP",
+      value: "74",
+      unit: "°C"
+    },
+
+    infusion: {
+      label: "INFUSIÓN",
+      value: "78",
+      unit: "%"
+    },
+
+    cebadas: {
+      label: "CEBADAS",
+      value: "12",
+      unit: ""
+    }
+  };
+
+  const activeScreen = screenData[screenMode];
+
   return (
       <div className="app">
 
@@ -9,7 +92,9 @@ function App() {
           <div className="nav-container">
 
             <a href="#" className="brand">
-              <div className="brand-icon">🌿</div>
+              <div className="brand-icon">
+                <img className="logo" src={favicon} alt="brand" />
+              </div>
 
               <div className="brand-name">
                 <strong>MATE</strong>
@@ -124,7 +209,9 @@ function App() {
                 <div className="bombilla">
 
                   <div className="bombilla-head">
-                    <div className="mini-logo">🌿</div>
+                    <div className="mini-logo">
+                      <img className="logo-bombilla" src={logoVerde}/>
+                    </div>
 
                     <div className="mini-screen">
                       <strong>74°</strong>
@@ -209,90 +296,379 @@ function App() {
         </section>
 
 
-        {/* PRODUCTO */}
-        <section id="producto" className="product-section section">
+        {/* PRODUCTO INTERACTIVO */}
 
-          <div className="section-container product-layout">
+        <section
+            id="producto"
+            className="interactive-product section"
+        >
 
-            <div className="product-showcase">
+          <div className="section-container">
 
-              <div className="product-circle"></div>
+            <div className="interactive-header">
 
-              <div className="bombilla large">
+              <div>
 
-                <div className="bombilla-head">
+                <span className="section-tag">
+                    EXPLORÁ EL PRODUCTO
+                </span>
 
-                  <div className="mini-logo">🌿</div>
+                <h2>
+                  Tecnología integrada.
+                  <span> Tocá para descubrirla.</span>
+                </h2>
 
-                  <div className="mini-screen">
-                    <strong>74°</strong>
-                    <small>C</small>
+              </div>
+
+              <p>
+                Seleccioná los distintos componentes de
+                la bombilla para conocer cómo funciona
+                cada parte del sistema.
+              </p>
+
+            </div>
+
+
+            <div className="product-explorer">
+
+              {/* VISUALIZACIÓN */}
+
+              <div className="product-stage">
+
+                <div className="stage-grid"></div>
+
+                <div className="stage-glow"></div>
+
+
+                {/* HUD */}
+
+                <div className="hud-top">
+
+                    <span>
+                        SMART MATE SYSTEM
+                    </span>
+
+                  <span className="live-status">
+                        <i></i>
+                        SISTEMA ACTIVO
+                    </span>
+
+                </div>
+
+
+                {/* BOMBILLA */}
+
+                <div className="smart-bombilla">
+
+
+                  {/* CABEZA */}
+
+                  <div className="smart-head">
+
+                    <div className="smart-logo">
+                      <img src={logoVerde} className="logo-bombilla" />
+                    </div>
+
+
+                    {/* PANTALLA */}
+
+                    <div className="smart-display">
+
+                      <small>
+                        {activeScreen.label}
+                      </small>
+
+                      <strong>
+                        {activeScreen.value}
+
+                        <em>
+                          {activeScreen.unit}
+                        </em>
+                      </strong>
+
+
+                      <div className="display-progress">
+                        <span></span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  {/* CUERPO */}
+
+                  <div className="smart-body">
+
+                    <div className="sensor-ring"></div>
+
+                    <div className="infusion-ring"></div>
+
+                  </div>
+
+
+                  {/* FILTRO */}
+
+                  <div className="smart-filter">
+
+                    {Array.from({ length: 15 }).map(
+                        (_, index) => (
+                            <span key={index}></span>
+                        )
+                    )}
+
+                  </div>
+
+                </div>
+
+
+                {/* HOTSPOTS */}
+
+                <button
+                    className={
+                      activePart === "display"
+                          ? "hotspot hotspot-display active"
+                          : "hotspot hotspot-display"
+                    }
+                    onClick={() =>
+                        setActivePart("display")
+                    }
+                >
+                  <span>01</span>
+                </button>
+
+
+                <button
+                    className={
+                      activePart === "thermal"
+                          ? "hotspot hotspot-thermal active"
+                          : "hotspot hotspot-thermal"
+                    }
+                    onClick={() =>
+                        setActivePart("thermal")
+                    }
+                >
+                  <span>02</span>
+                </button>
+
+
+                <button
+                    className={
+                      activePart === "infusion"
+                          ? "hotspot hotspot-infusion active"
+                          : "hotspot hotspot-infusion"
+                    }
+                    onClick={() =>
+                        setActivePart("infusion")
+                    }
+                >
+                  <span>03</span>
+                </button>
+
+
+                <button
+                    className={
+                      activePart === "filter"
+                          ? "hotspot hotspot-filter active"
+                          : "hotspot hotspot-filter"
+                    }
+                    onClick={() =>
+                        setActivePart("filter")
+                    }
+                >
+                  <span>04</span>
+                </button>
+
+
+                {/* INDICADORES */}
+
+                <div className="sensor-data data-temperature">
+
+                  <small>TEMPERATURA</small>
+
+                  <strong>74.2°C</strong>
+
+                  <span>
+                        +0.2°C
+                    </span>
+
+                </div>
+
+
+                <div className="sensor-data data-infusion">
+
+                  <small>INFUSIÓN</small>
+
+                  <strong>78%</strong>
+
+                  <div className="mini-progress">
                     <span></span>
                   </div>
 
                 </div>
 
-                <div className="bombilla-body"></div>
 
-              </div>
+                <div className="sensor-data data-bluetooth">
 
+                    <span className="bluetooth-icon">
+                        ᛒ
+                    </span>
 
-              <div className="floating-card card-temp">
-                <small>TEMPERATURA</small>
-                <strong>74°C</strong>
-                <span>Óptima</span>
-              </div>
+                  <div>
+                    <small>
+                      BLUETOOTH
+                    </small>
 
+                    <strong>
+                      CONECTADO
+                    </strong>
+                  </div>
 
-              <div className="floating-card card-infusion">
-                <small>INFUSIÓN</small>
-                <strong>78%</strong>
-
-                <div className="progress">
-                  <span></span>
                 </div>
+
               </div>
 
-            </div>
+
+              {/* PANEL DERECHO */}
+
+              <div className="interactive-panel">
+
+                <div className="panel-number">
+                  {activeProduct.number}
+                </div>
 
 
-            <div className="product-copy">
-
-            <span className="section-tag">
-              MATE INTELIGENTE
-            </span>
-
-              <h2>
-                Una bombilla.
-                <span> Mucha más información.</span>
-              </h2>
-
-              <p>
-                Integramos sensores, electrónica y una pequeña pantalla
-                directamente en la bombilla para obtener información útil
-                sin cambiar la forma tradicional de tomar mate.
-              </p>
+                <span className="panel-tag">
+                    {activeProduct.tag}
+                </span>
 
 
-              <div className="product-features">
+                <h3>
+                  {activeProduct.title}
+                </h3>
 
-                <MiniFeature
-                    icon="🌡"
-                    title="Sensor térmico"
-                    text="Control de temperatura en tiempo real."
-                />
 
-                <MiniFeature
-                    icon="◉"
-                    title="Pantalla integrada"
-                    text="Información visible sin utilizar el celular."
-                />
+                <p>
+                  {activeProduct.text}
+                </p>
 
-                <MiniFeature
-                    icon="▥"
-                    title="Análisis de infusión"
-                    text="Estimación del estado actual de la yerba."
-                />
+
+                <div className="panel-reading">
+
+                  <div>
+
+                    <small>
+                      LECTURA ACTUAL
+                    </small>
+
+                    <strong>
+                      {activeProduct.value}
+                    </strong>
+
+                  </div>
+
+                  <span>
+                        <i></i>
+                    {activeProduct.status}
+                    </span>
+
+                </div>
+
+
+                {/* MODO DE PANTALLA */}
+
+                <div className="screen-controller">
+
+                  <small>
+                    SIMULAR PANTALLA
+                  </small>
+
+
+                  <div className="screen-buttons">
+
+                    <button
+                        className={
+                          screenMode === "temperature"
+                              ? "active"
+                              : ""
+                        }
+                        onClick={() =>
+                            setScreenMode(
+                                "temperature"
+                            )
+                        }
+                    >
+                      Temperatura
+                    </button>
+
+
+                    <button
+                        className={
+                          screenMode === "infusion"
+                              ? "active"
+                              : ""
+                        }
+                        onClick={() =>
+                            setScreenMode(
+                                "infusion"
+                            )
+                        }
+                    >
+                      Infusión
+                    </button>
+
+
+                    <button
+                        className={
+                          screenMode === "cebadas"
+                              ? "active"
+                              : ""
+                        }
+                        onClick={() =>
+                            setScreenMode(
+                                "cebadas"
+                            )
+                        }
+                    >
+                      Cebadas
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                {/* LISTA DE COMPONENTES */}
+
+                <div className="component-selector">
+
+                  {productPartKeys.map((key) => {
+                    const part = productParts[key];
+
+                    return (
+                        <button
+                            key={key}
+                            className={
+                              activePart === key
+                                  ? "active"
+                                  : ""
+                            }
+                            onClick={() =>
+                                setActivePart(key)
+                            }
+                        >
+                          <span>
+                            {part.number}
+                          </span>
+
+                          {part.title}
+
+                          <strong>
+                            →
+                          </strong>
+                        </button>
+                    );
+                  })}
 
               </div>
 
@@ -300,7 +676,9 @@ function App() {
 
           </div>
 
-        </section>
+      </div>
+
+</section>
 
 
         {/* FUNCIONES */}
@@ -525,7 +903,7 @@ function App() {
           <div className="footer-container">
 
             <div className="footer-brand">
-              🌿
+              <img className="logo" src={favicon}/>
               <strong>MATE</strong>
               <span>INTELIGENTE</span>
             </div>
@@ -571,22 +949,6 @@ function ProblemCard({
         <h3>{title}</h3>
 
         <p>{text}</p>
-
-      </div>
-  );
-}
-
-
-function MiniFeature({ icon, title, text }: CardProps) {
-  return (
-      <div className="mini-feature">
-
-        <div>{icon}</div>
-
-        <span>
-        <strong>{title}</strong>
-        <p>{text}</p>
-      </span>
 
       </div>
   );
