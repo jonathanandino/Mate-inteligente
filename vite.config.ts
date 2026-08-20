@@ -4,7 +4,7 @@ import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/mate-inteligente-app/',
+  base: '/Mate-inteligente/',
 
   plugins: [
     react(),
